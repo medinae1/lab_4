@@ -11,13 +11,38 @@ body {
     grid-template-columns: repeat(6,1fr);
     grid-auto-rows: 300px;
     gap:20px;
-   
-    
-    
+        
 }
 .planet{
     background: #5d5a76;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    
 }
+
+.planet::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px; /* Adjust circle size as needed */
+    height: 100px; /* Adjust circle size as needed */
+    border-radius: 50%; /* Create a circular shape */
+    background-color: blue; /* Default circle color */
+}
+
+
+.planet.sun::before{
+    width: 250px; 
+    height: 250px; 
+    background: linear-gradient(45deg, rgb(243, 130, 24) 0%, rgb(222, 245, 14) 100%); 
+}
+
 .planet.sun{
     grid-column-start: 1;
     grid-column-end: 3;
